@@ -79,7 +79,7 @@
 &kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
 &kp  TAB      &kp  A        &kp  S        &kp D         &kp  F        &kp  G                                                                         &kp  H        &kp J         &kp K         &kp L         &kp SEMI      &kp  SQT  
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &prog_caps                                          &kp   ESC    &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &mt  RSHFT ENTER
-                            &none                       &kp  LALT     &kp  LGUI     &lt 3 SPACE    &lt 6 TAB              &lt 6 BKSPC   &lt 4 SPACE  &mt LGUI DELETE  &kp RGUI               &kp  RCTL   
+                            &none                       &kp  LALT     &kp  LGUI     &lt 3 SPACE    &lt 6 TAB              &lt 6 BKSPC   &lt 4 SPACE  &mt LGUI DELETE  &none           &kp  RCTL   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -131,8 +131,8 @@
  */
                         bindings = <
 &kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
-&kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
-&trans        &kp  Undo     &kp  Cut      &kp  Copy     &kp  Paste    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
+&kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp   LEFT    &kp   DOWN    &kp   UP      &kp  RIGHT    &kp DEL       &trans
+&trans        &kp  Undo     &kp  Cut      &kp  Copy     &kp  Paste    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  C_VOL_DN &kp   RSHFT   &kp   RCTRL   &kp   LALT    &kp  RGUI     &trans
                             &trans                      &trans        &trans        &trans        &trans                 &mo  ADJ_L    &mo  ADJ_L        &trans        &trans                      &kp  RCTRL    
                         >;
 			
@@ -149,8 +149,8 @@
  */
                         bindings = <
 &kp  F11      &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp   N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  F12      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5                                                                        &kp   LEFT    &kp   DOWN    &kp   UP      &kp  RIGHT    &kp DEL       &trans 
-&trans        &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp INS                                            &kp  C_MUTE   &kp  C_VOL_DN &kp   RSHFT   &kp   RCTRL   &kp   LALT    &kp  RGUI     &trans
+&kp  F12      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5                                                                        &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans 
+&trans        &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp INS                                            &kp  C_MUTE   &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
                             &trans                      &trans        &trans        &mo  ADJ_L        &mo ADJ_L              &trans        &trans        &trans        &trans                      &kp  RCTRL   
                         >;
 			
