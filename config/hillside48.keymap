@@ -16,6 +16,7 @@
 #define SYM_L    3
 #define NUM_L    4
 #define ADJ_L    5
+#define MOD_L    6
 
 #define Undo   LC(Z)
 #define Cut    LC(X)
@@ -55,12 +56,14 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-    };
 
-    &caps_word {
-            continue-list = <UNDERSCORE MINUS>;
+        prog_caps: behavior_prog_caps_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "PROG_CAPS";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE>;
         };
-        
+    }; 
         keymap {
                 compatible = "zmk,keymap";
 
@@ -74,9 +77,9 @@
  */
                         bindings = <
 &kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &mt LCTRL A   &mt LALT  S   &mt LSHFT  D  &mt LGUI F    &kp  G                                                                         &kp  H        &mt LCTRL J   &mt LALT  K   &mt LSHFT  L  &mt LGUI SEMI &kp  SQT  
+&kp  TAB      &kp  A        &kp  S        &kp D         &kp  F        &kp  G                                                                         &kp  H        &kp J         &kp K         &kp L         &kp SEMI      &kp  SQT  
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &caps_word                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &mt  RSHFT ENTER
-                            &none                       &kp  LALT     &kp  LGUI     &lt 3 SPACE    &mt LCTL SPACE              &mt  RCTL SPACE    &lt 4  SPACE    &kp  LALT     &kp  RGUI                   &kp  RCTL   
+                            &none                       &kp  LALT     &kp  LGUI     &lt 3 SPACE    &lt 6 SPACE              &lt 6 SPACE    &lt 4  SPACE    &kp  LALT     &kp  RGUI                   &kp  RCTL   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -171,5 +174,24 @@
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
+
+                                mods_layer {
+/* ADJUST
+ * -------------------------------------------------------------------------------------------------------------------------------------
+ * |       | QWERTY| DVORAK| COLEMK|       |       |-----------------------------------|       |Prt Scr|       | EP_OFF| EP_ON |       |
+ * |       | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |       |       |       |       |       |
+ * | BOOTL | RESET |       |OUT_USB|OUT_BLE|       |BT CLR |-------------------|       |       |       |       |       |       | SHIFT |
+ * ----------------|       |-------|       |       |       |       |---|       |       |       |       |-------| CTRL  |----------------
+ */
+                        bindings = <
+&none         &to  QWERTY_L &to  DVORAK_L &to  COLEMK_L &none         &none                                                                             &none             &kp PRINTSCREEN    &none         &ext_power EP_OFF  &ext_power EP_ON &none
+&none         &sk LSHFT     &sk LCTL      &sk LALT      &sk LGUI      &none                                                                             &none             &sk LSHFT          &sk LCTL      &sk LALT           &sk LGUI            &none
+&bootloader   &reset        &none         &out OUT_USB  &out OUT_BLE  &none         &trans                                        &none            &none             &none              &none            &none           &none            &trans
+                            &trans                      &trans        &trans        &trans        &trans                 &trans        &trans           &trans            &trans                              &kp  RCTRL   
+                        >;
+			
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+                };
+                
         };
 };
