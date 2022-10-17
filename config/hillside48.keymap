@@ -185,7 +185,7 @@
  */
                         bindings = <
 &none         &trans &trans &trans &none         &none                                                                             &none             &kp PRINTSCREEN    &none         &ext_power EP_OFF  &ext_power EP_ON &none
-&none         &sk LSHFT     &sk LCTL      &sk LALT      &sk LGUI      &none                                                                             &none             &sk LSHFT          &sk LCTL      &sk LALT           &sk LGUI            &none
+&none         &sk LSHFT     &sk LCTL      &sk LALT      &sk LGUI      &none                                                                             &none             &sk RGUI          &sk RALT      &sk RCTRL           &sk RSHFT            &none
 &bootloader   &reset        &none         &out OUT_USB  &out OUT_BLE  &none         &trans                                        &none            &none             &none              &none            &none           &none            &trans
                             &trans                      &trans        &trans        &trans        &trans                 &trans        &trans           &trans            &trans                              &kp  RCTRL   
                         >;
