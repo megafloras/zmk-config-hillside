@@ -55,6 +55,10 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+
+        &caps_word {
+            continue-list = <UNDERSCORE MINUS>;
+        };
     };
         
         keymap {
@@ -71,7 +75,7 @@
                         bindings = <
 &kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
 &kp  TAB      &mt LCTRL A   &mt LALT  S   &mt LSHFT  D  &mt LGUI F    &kp  G                                                                         &kp  H        &mt LCTRL J   &mt LALT  K   &mt LSHFT  L  &mt LGUI SEMI &kp  SQT  
-&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &mt  RSHFT ENTER
+&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &caps_word                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &mt  RSHFT ENTER
                             &none                       &kp  LALT     &kp  LGUI     &lt 3 SPACE    &mt LCTL SPACE              &mt  RCTL SPACE    &lt 4  SPACE    &kp  LALT     &kp  RGUI                   &kp  RCTL   
                         >;
 			
